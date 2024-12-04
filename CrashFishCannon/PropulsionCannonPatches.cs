@@ -1,8 +1,6 @@
 ﻿using BananaDude508.CrashFishCannon;
 using HarmonyLib;
-using Nautilus.Extensions;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 namespace BananaDude508.CrashFishCannon
