@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using UnityEditor;
 
 namespace BananaDude508.CustomStartMenu
 {
@@ -12,7 +13,9 @@ namespace BananaDude508.CustomStartMenu
         public static void Awake_Postfix(PerformanceConsoleCommands __instance)
         {
             performanceConsoleCommands = __instance;
-            Plugin.Log.LogInfo($"PerformanceConsoleCommands.sizerefPrefab exists: {performanceConsoleCommands.sizeRefPrefab != null}");
+            bool srPrefabExists = performanceConsoleCommands.sizeRefPrefab != null;
+			Plugin.Log.LogInfo($"PerformanceConsoleCommands.sizerefPrefab exists: {srPrefabExists}");
+            if (!srPrefabExists) return;
         }
     }
 }
