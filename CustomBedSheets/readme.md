@@ -1,0 +1,7 @@
+- Do not edit the default.png file
+- DoubleBasic.png is the double bed without a blanket
+- DoubleQuilt.png is the double bed with a blanket
+- Single.png is the single bed
+- Gray areas are covered by either the pillow or the blanket
+- Files are template files and may be edited
+- Images may be any resolution, examples are not ideal because they warp the image but im lazy (if you find the ideal ratios leave a github issue)
