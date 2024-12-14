@@ -21,6 +21,7 @@ namespace BananaDude508.RenameSaves
         {
             Harmony.PatchAll();
             Log = Logger;
+            Log.LogInfo("RenameSavesPluginLoaded");
         }
     }
 }
