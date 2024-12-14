@@ -33,9 +33,7 @@ namespace BananaDude508.RenameSaves
 			try
 			{
 				savePath = Directory.GetCurrentDirectory() + "\\SNAppData\\SavedGames\\" + saveLoadManager.GetCurrentSlot() + "\\gameinfo.json";
-				if (GetGameData(savePath, out gameData))
-					Plugin.Log.LogInfo($"Got game data {JsonUtility.ToJson(gameData, true)}");
-				else
+				if (!GetGameData(savePath, out gameData))
 					throw new Exception("Failed to get game data");
 			}
 			catch (Exception ex)

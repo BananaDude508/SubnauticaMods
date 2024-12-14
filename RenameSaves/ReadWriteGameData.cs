@@ -45,6 +45,7 @@ namespace BananaDude508.RenameSaves
 		public static string HandleNameLoad(ref GameData gameData)
         {
 			string text = MainMenuControllerPatch.nameInput;
+            Plugin.Log.LogInfo($"{gameData.savename} or {text}");
 			if (gameData.savename == null || gameData.savename.Replace(" ", "") == "")
 				if (text != null && text.Replace(" ", "") != "")
 				{
