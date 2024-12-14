@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using System.IO;
+using UnityEngine;
 using static BananaDude508.RenameSaves.ReadWriteGameData;
 
 
@@ -17,11 +18,7 @@ namespace BananaDude508.RenameSaves
 			GameData gameData;
 			GetGameData(savePath, out gameData);
 
-			string text = MainMenuControllerPatch.nameInput;
-			if (gameData.savename == null || gameData.savename.Replace(" ", "") == "")
-				gameData.savename = GetRandomSaveName();
-			else if (text != null && text.Replace(" ", "") != "")
-				gameData.savename = text;
+			HandleNameLoad(ref gameData);
 
 			lb.saveGameTimeText.text = gameData.savename;
 			   

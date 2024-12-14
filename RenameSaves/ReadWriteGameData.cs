@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using UnityEngine;
+using static BananaDude508.RenameSaves.ReadWriteGameData;
 
 namespace BananaDude508.RenameSaves
 {
@@ -41,6 +42,19 @@ namespace BananaDude508.RenameSaves
                 return false;
             }
         }
+		public static string HandleNameLoad(ref GameData gameData)
+        {
+			string text = MainMenuControllerPatch.nameInput;
+			if (gameData.savename == null || gameData.savename.Replace(" ", "") == "")
+				if (text != null && text.Replace(" ", "") != "")
+				{
+					gameData.savename = text;
+					MainMenuControllerPatch.nameInput = "";
+				}
+				else
+					gameData.savename = GetRandomSaveName();
+            return gameData.savename;
+		}
 
         private static string[] randomSaveNames =
         {

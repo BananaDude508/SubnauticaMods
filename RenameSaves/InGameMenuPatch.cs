@@ -51,11 +51,7 @@ namespace BananaDude508.RenameSaves
 			if (prefixError)
 				savePath = Directory.GetCurrentDirectory() + "\\SNAppData\\SavedGames\\" + saveLoadManager.GetCurrentSlot() + "\\gameinfo.json";
 
-			string text = MainMenuControllerPatch.nameInput;
-			if (gameData.savename == null || gameData.savename.Replace(" ", "") == "")
-				gameData.savename = GetRandomSaveName();
-			else if (text != null && text.Replace(" ", "") != "")
-				gameData.savename = text;
+			HandleNameLoad(ref gameData);
 
 			SaveGameData(savePath, gameData);
 			Plugin.Log.LogInfo(JsonUtility.ToJson(gameData, true));
